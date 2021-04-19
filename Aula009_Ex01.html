@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                Cálculo da Porcentagem de Rendimentos de Investimentos.
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <form>
+                            <div class="form-group">
+                                <label for="nomeCompleto">Insira seu nome completo:</label>
+                                <input id="nomeCompleto" type="text" class="form-control" />
+                                <br>
+                                <label for="valorInvestido">Informe o valor do seu investimento:</label>
+                                <input id="valorInvestido" type="text" class="form-control" />
+                                <br>
+                                <small class="form-text text-muted" style="font-size: large;">Iremos 
+                                    dizer a porcentagem dos seus rendimentos.</small>
+                            </div>
+                            <div id="valor" class="alert alert-success d-none" role="alert">
+                            </div>
+                            <br>
+                            <button type="button" class="btn btn-primary" onclick="calcularIdade();">Calcular
+                                de acordo com o valor investido</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+
+ const calcularIdade = () => {
+
+ let nomeCompleto = document.getElementById("nomeCompleto").value;
+ let valorInvestido = document.getElementById("valorInvestido").value;
+ 
+ if (valorInvestido >= 10000 && valorInvestido <= 20000) {
+    document.getElementById("valor").innerHTML = `Olá ${nomeCompleto}! 
+    Seu investimento de R$${valorInvestido} rendeu 12% ao ano.`;
+ }
+
+ else if (valorInvestido < 10000) {
+    document.getElementById("valor").innerHTML = `Olá ${nomeCompleto}! 
+    Seu investimento de R$${valorInvestido} rendeu 6% ao ano.`;
+ }
+
+ else {
+    document.getElementById("valor").innerHTML = `Olá ${nomeCompleto}! 
+    Seu investimento de R$${valorInvestido} rendeu 13% ao ano.`;
+ }
+
+ document.getElementById("valor").classList.remove("d-none");
+
+        };
+
+</script>
+</body>
+
+</html>
